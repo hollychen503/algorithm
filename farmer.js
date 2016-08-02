@@ -7,6 +7,9 @@ var stateRight = [];
 var initStat = 1111;//farmer, wolf, sheep, vagetable
 //var finalStat = 0;//farmer, wolf, sheep, vagetable
 
+
+var actName = [];
+
 stateLeft.push(initStat);
 stateRight.push(0);
 
@@ -135,6 +138,7 @@ function goTry(stateLeft, stateRight){
         console.log('done');
         console.log(stateLeft);  
         console.log(stateRight);  
+        console.log(actName);        
         return;
     }
     
@@ -152,6 +156,7 @@ function goTry(stateLeft, stateRight){
         {
             stateLeft.push(ret[0]);
             stateRight.push(ret[1]);
+            actName.push(processArr[i].name);
             
             //console.log('new step:'+ ret[0]);
                        
@@ -159,6 +164,7 @@ function goTry(stateLeft, stateRight){
             
             stateLeft.pop();
             stateRight.pop();
+            actName.pop();
         }
     }
     
